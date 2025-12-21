@@ -1,10 +1,16 @@
 package app
 
-func Run() {
-	// Direccionar rutas
-	router := NewRouter()
+import (
+	"github.com/jmpizza/Flower-Trick/internal/handlers"
+)
 
-	// Iniciar el servidor
-	Start(router)
+func Run() {
+	// Routing
+	r := NewRouter()
+
+	handlers.Handler()
+
+	// Server start
+	Start(r)
 
 }

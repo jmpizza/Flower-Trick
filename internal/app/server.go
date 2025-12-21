@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Start(c *gin.Engine) {
+func Start(r *gin.Engine) {
 	// Obtener puerto
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -15,7 +15,7 @@ func Start(c *gin.Engine) {
 	}
 
 	// Iniciar servidor
-	if err := c.Run(":" + port); err != nil {
+	if err := r.Run(":" + port); err != nil {
 		log.Fatalf("Error al inicial el servidor: %v", err)
 	}
 
