@@ -5,7 +5,6 @@ import (
 )
 
 func NewRouter() *gin.Engine {
-	// Router creation
 	router := gin.Default()
 
 	return router

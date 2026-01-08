@@ -2,34 +2,39 @@ package handlers
 
 import (
 	"fmt"
-	"io"
-	"log"
-	"net/http"
+
+	"github.com/jmpizza/Flower-Trick/internal/models"
 )
 
-const apiurl = "https://pokeapi.co/api/v2/"
-
-func Handler() {
-	req, err := http.NewRequest("GET", apiurl+"ability/1", nil)
-	if err != nil {
-		log.Fatalf("client: error %v", err)
-	}
-	res, err := http.DefaultClient.Do(req)
-	if err != nil {
-		log.Fatalf("client: error %v", err)
-	}
-
-	resBody, err := io.ReadAll(res.Body)
-	if err != nil {
-		log.Fatalf("client: error %v", err)
-	}
-	fmt.Println("client: response body: \n", string(resBody))
-
-	fmt.Println(res.StatusCode)
-	fmt.Println(`
-	
-	POKEMON API
-	
-	`)
-
+func Ability(id string) (result models.Ability, err error) {
+	err = do(fmt.Sprintf("ability/%s", id), &result)
+	return result, err
 }
+
+func Characteristic(id string) {}
+
+func EggGroup(id string) {}
+
+func Gender(id string) {}
+
+func GrowthRate(id string) {}
+
+func Nature(id string) {}
+
+func PokeathlonStat(id string) {}
+
+func Pokemon(id string) {}
+
+func PokemonColor(id string) {}
+
+func PokemonForm(id string) {}
+
+func PokemonHabitad(id string) {}
+
+func PokemonShape(id string) {}
+
+func PokemonSpecies(id string) {}
+
+func Stats(id string) {}
+
+func Type(id string) {}
