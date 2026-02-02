@@ -6,53 +6,53 @@ type Ability struct {
 	IsMainSeries bool   `json:"is_main_series"`
 	Generation   struct {
 		Name string `json:"name"`
-		URL  string `json:"url"`
+		//URL  string `json:"url"`
 	} `json:"generation"`
-	Names []struct {
-		Name     string `json:"name"`
-		Language struct {
-			Name string `json:"name"`
-			URL  string `json:"url"`
-		} `json:"language"`
-	} `json:"names"`
+	// Names []struct {
+	// 	Name     string `json:"name"`
+	// 	Language struct {
+	// 		Name string `json:"name"`
+	// 		URL  string `json:"url"`
+	// 	} `json:"language"`
+	// } `json:"names"`
 	EffectEntries []struct {
 		Effect      string `json:"effect"`
 		ShortEffect string `json:"short_effect"`
 		Language    struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"language"`
 	} `json:"effect_entries"`
-	EffectChanges []struct {
-		VersionGroup struct {
-			Name string `json:"name"`
-			URL  string `json:"url"`
-		} `json:"version_group"`
-		EffectEntries []struct {
-			Effect   string `json:"effect"`
-			Language struct {
-				Name string `json:"name"`
-				URL  string `json:"url"`
-			} `json:"language"`
-		} `json:"effect_entries"`
-	} `json:"effect_changes"`
-	FlavorTextEntries []struct {
-		FlavorText string `json:"flavor_text"`
-		Language   struct {
-			Name string `json:"name"`
-			URL  string `json:"url"`
-		} `json:"language"`
-		VersionGroup struct {
-			Name string `json:"name"`
-			URL  string `json:"url"`
-		} `json:"version_group"`
-	} `json:"flavor_text_entries"`
+	// EffectChanges []struct {
+	// 	VersionGroup struct {
+	// 		Name string `json:"name"`
+	// 		//URL  string `json:"url"`
+	// 	} `json:"version_group"`
+	// 	EffectEntries []struct {
+	// 		Effect   string `json:"effect"`
+	// 		Language struct {
+	// 			Name string `json:"name"`
+	// 			//URL  string `json:"url"`
+	// 		} `json:"language"`
+	// 	} `json:"effect_entries"`
+	// } `json:"effect_changes"`
+	// FlavorTextEntries []struct {
+	// 	FlavorText string `json:"flavor_text"`
+	// 	Language   struct {
+	// 		Name string `json:"name"`
+	// 		//URL  string `json:"url"`
+	// 	} `json:"language"`
+	// 	VersionGroup struct {
+	// 		Name string `json:"name"`
+	// 		//URL  string `json:"url"`
+	// 	} `json:"version_group"`
+	// } `json:"flavor_text_entries"`
 	Pokemon []struct {
 		IsHidden bool `json:"is_hidden"`
 		Slot     int  `json:"slot"`
 		Pokemon  struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"pokemon"`
 	} `json:"pokemon"`
 }
@@ -88,6 +88,22 @@ type EggGroup struct {
 		Name string `json:"name"`
 		URL  string `json:"url"`
 	} `json:"pokemon_species"`
+}
+
+type Gender struct {
+	ID                    int    `json:"id"`
+	Name                  string `json:"name"`
+	PokemonSpeciesDetails []struct {
+		Rate           int `json:"rate"`
+		PokemonSpecies struct {
+			Name string `json:"name"`
+			//URL  string `json:"url"`
+		} `json:"pokemon_species"`
+	} `json:"pokemon_species_details"`
+	RequiredForEvolution []struct {
+		Name string `json:"name"`
+		//URL  string `json:"url"`
+	} `json:"required_for_evolution"`
 }
 
 type GrowthRates struct {
@@ -195,30 +211,30 @@ type Pokemon struct {
 		Slot     int  `json:"slot"`
 		Ability  struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"ability"`
 	} `json:"abilities"`
 	Forms []struct {
 		Name string `json:"name"`
-		URL  string `json:"url"`
+		//URL  string `json:"url"`
 	} `json:"forms"`
 	GameIndices []struct {
 		GameIndex int `json:"game_index"`
 		Version   struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"version"`
 	} `json:"game_indices"`
 	HeldItems []struct {
 		Item struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"item"`
 		VersionDetails []struct {
 			Rarity  int `json:"rarity"`
 			Version struct {
 				Name string `json:"name"`
-				URL  string `json:"url"`
+				//URL  string `json:"url"`
 			} `json:"version"`
 		} `json:"version_details"`
 	} `json:"held_items"`
@@ -226,24 +242,24 @@ type Pokemon struct {
 	Moves                  []struct {
 		Move struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"move"`
 		VersionGroupDetails []struct {
 			LevelLearnedAt int `json:"level_learned_at"`
 			VersionGroup   struct {
 				Name string `json:"name"`
-				URL  string `json:"url"`
+				//URL  string `json:"url"`
 			} `json:"version_group"`
 			MoveLearnMethod struct {
 				Name string `json:"name"`
-				URL  string `json:"url"`
+				//URL  string `json:"url"`
 			} `json:"move_learn_method"`
 			Order int `json:"order"`
 		} `json:"version_group_details"`
 	} `json:"moves"`
 	Species struct {
 		Name string `json:"name"`
-		URL  string `json:"url"`
+		//URL  string `json:"url"`
 	} `json:"species"`
 	Sprites struct {
 		BackDefault      string `json:"back_default"`
@@ -430,33 +446,33 @@ type Pokemon struct {
 		Effort   int `json:"effort"`
 		Stat     struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"stat"`
 	} `json:"stats"`
 	Types []struct {
 		Slot int `json:"slot"`
 		Type struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"type"`
 	} `json:"types"`
 	PastTypes []struct {
 		Generation struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"generation"`
 		Types []struct {
 			Slot int `json:"slot"`
 			Type struct {
 				Name string `json:"name"`
-				URL  string `json:"url"`
+				//URL  string `json:"url"`
 			} `json:"type"`
 		} `json:"types"`
 	} `json:"past_types"`
 	PastAbilities []struct {
 		Generation struct {
 			Name string `json:"name"`
-			URL  string `json:"url"`
+			//URL  string `json:"url"`
 		} `json:"generation"`
 		Abilities []struct {
 			Ability  any  `json:"ability"`
@@ -518,7 +534,7 @@ type PokemonForm struct {
 	} `json:"version_group"`
 }
 
-type PokemonHabitad struct {
+type PokemonHabitat struct {
 	ID    int    `json:"id"`
 	Name  string `json:"name"`
 	Names []struct {

@@ -7,12 +7,13 @@ type Pagination struct {
 }
 type NamedResource struct {
 	Name string `json:"name"`
-	URL  string `json:"url"`
+	//URL  string `json:"url"`
 }
 
 type URLResource struct {
 	URL string `json:"url"`
 }
+
 type NamedResponse struct {
 	Pagination
 	Results []NamedResource `json:"results"`
