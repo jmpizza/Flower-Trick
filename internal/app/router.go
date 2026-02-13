@@ -10,8 +10,12 @@ func NewRouter() *gin.Engine {
 	router := gin.Default()
 	//Configuracion de CORS
 	router.Use(cors.Default())
-	//Pokemon
+
+	//Pagination
 	router.GET("/pokemon", handlers.Pagination)
+
+	//Pokemon
+
 	router.GET("/ability/:id", handlers.Ability)
 	router.GET("/characteristic/:id", handlers.Characteristic)
 	router.GET("/egg-group/:id", handlers.EggGroup)
@@ -19,6 +23,7 @@ func NewRouter() *gin.Engine {
 	router.GET("/growt-rate/:id", handlers.GrowthRate)
 	router.GET("/pokeathol-stat/:id", handlers.PokeathlonStat)
 	router.GET("/pokemon/:id", handlers.Pokemon)
+	router.GET("/pokemon-summary/:id", handlers.PokemonSummary)
 	router.GET("/pokemon-color/:id", handlers.PokemonColor)
 	router.GET("/pokemon-form/:id", handlers.PokemonForm)
 	router.GET("/pokemon-habitat/:id", handlers.PokemonHabitat)

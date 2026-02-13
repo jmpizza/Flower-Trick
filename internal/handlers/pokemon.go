@@ -112,6 +112,19 @@ func Pokemon(c *gin.Context) {
 	c.JSON(http.StatusOK, result)
 }
 
+func PokemonSummary(c *gin.Context) {
+	var obj models.PokemonSummary
+	var result APIResponse
+	id := c.Param("id")
+	err := doRequest(fmt.Sprintf("pokemon/%s", id), &result, &obj)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"message": "error",
+		})
+	}
+	c.JSON(http.StatusOK, result)
+}
+
 func PokemonColor(c *gin.Context) {
 	var obj models.PokemonColor
 	var result APIResponse

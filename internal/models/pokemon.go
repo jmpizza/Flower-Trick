@@ -469,17 +469,24 @@ type Pokemon struct {
 			} `json:"type"`
 		} `json:"types"`
 	} `json:"past_types"`
-	PastAbilities []struct {
-		Generation struct {
+}
+
+type PokemonSummary struct {
+	Name    string `json:"name"`
+	Sprites struct {
+		FrontDefault string `json:"front_default"`
+		Other        struct {
+			OfficialArtwork struct {
+				FrontDefault string `json:"front_default"`
+			} `json:"official-artwork"`
+		} `json:"other"`
+	} `json:"sprites"`
+	Types []struct {
+		Slot int `json:"slot"`
+		Type struct {
 			Name string `json:"name"`
-			//URL  string `json:"url"`
-		} `json:"generation"`
-		Abilities []struct {
-			Ability  any  `json:"ability"`
-			IsHidden bool `json:"is_hidden"`
-			Slot     int  `json:"slot"`
-		} `json:"abilities"`
-	} `json:"past_abilities"`
+		} `json:"type"`
+	} `json:"types"`
 }
 
 type PokemonColor struct {
