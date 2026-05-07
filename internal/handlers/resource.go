@@ -13,9 +13,8 @@ func Pagination(c *gin.Context) {
 	path := c.Request.RequestURI
 	err := doRequest(path, &result, &obj)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"message": "error",
-		})
+		serverError(c, result)
+		return 
 	}
 	c.JSON(http.StatusOK, result)
 }
