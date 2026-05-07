@@ -44,12 +44,12 @@ func buildAPIResponse(
 	result.Message = res.Status
 	result.Success = res.StatusCode >= 200 && res.StatusCode < 300
 
-	if obj != nil {
+	if result.Success && obj != nil {
 		if err := json.Unmarshal(resBody, obj); err != nil {
 			return err
 		}
 		result.Data = obj
-	}
-
+	} 
+	
 	return nil
 }
